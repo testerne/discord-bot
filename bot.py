@@ -159,8 +159,8 @@ async def on_ready():
     global message_id, last_status, last_content
 
     print("Bot online")
-    channel = client.get_channel(CHANNEL_ID)
-    change_channel = client.get_channel(CHANGE_CHANNEL_ID)
+    channel = await client.fetch_channel(CHANNEL_ID)
+    change_channel = await client.fetch_channel(CHANGE_CHANNEL_ID)
 
     print("Crawler hjemmeside...")
     crawl(BASE_URL)
